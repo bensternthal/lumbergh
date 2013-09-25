@@ -47,10 +47,10 @@ you don't have `pip` installed, you can install it with `easy_install pip`.
    $ cp settings/local.py-dist settings/local.py
    ```
 
-   The file is commented to explain what each setting does and how to customize
-   them.   
+   The file is commented to explain what each setting does and which can not be 
+   left blank.
 
-   If you wish to have jobs appear locally make sure JOBVITE_URI is set.
+   Make sure to update the DB information, HMAC_KEYS and SECRET_KEY values.
 
 6. Initialize your database structure:
 
