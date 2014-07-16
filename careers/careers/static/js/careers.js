@@ -567,12 +567,12 @@
         });;
 
         // Track video opening.
-        _gaq.push(['_trackEvent', videoPlayer.gaInteraction, 'Open', videoPlayer.gaLabel]);
+        ga('send', 'event', videoPlayer.gaInteraction, 'Open', videoPlayer.gaLabel);
     }
 
     function videoEvent(state, videoPlayer) {
         return function() {
-            _gaq.push(['_trackEvent', videoPlayer.gaInteraction, state, videoPlayer.gaLabel]);
+            ga('send', 'event', videoPlayer.gaInteraction, state, videoPlayer.gaLabel);
         };
     }
 

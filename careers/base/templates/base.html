@@ -1,7 +1,7 @@
 {% set navbar_section = navbar_section|default(None) -%}
 
 <!DOCTYPE html>
-<html lang="{{ LANG }}" dir="{{ DIR }}" class="js-disabled" data-ga-code="{{ settings.GA_ACCOUNT_CODE }}">
+<html lang="{{ LANG }}" dir="{{ DIR }}" class="js-disabled">
   <head>
     {# meta #}
     <meta charset="UTF-8">
@@ -31,15 +31,21 @@
     {# icons #}
     <link rel="shortcut icon" type="image/png" href="{{ static('img/favicon.png') }}"/>
 
-    {% block google_analytics %}
-      {{ js('google_analytics') }}
-    {% endblock %}
-
   </head>
   <body id="{% block body_id %}{% endblock %}"
         {% block body_data %}
           data-js-smallscreen="{{ js_urls_json('smallscreen') }}"
         {% endblock %}>
+
+    <!-- Google Tag Manager -->
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MLM3DH"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MLM3DH');</script>
+    <!-- End Google Tag Manager -->
 
     {% include "base/header.html" %}
 
